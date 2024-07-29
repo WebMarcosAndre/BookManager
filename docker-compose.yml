@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  mssql:
+    container_name: "mssql"
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password@123
+      - MSSQL_PID=Developer
+
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      REDIS_HOSTS: local:redis-cluster:6379
+    ports:
+      - "7081:8081"
+  
