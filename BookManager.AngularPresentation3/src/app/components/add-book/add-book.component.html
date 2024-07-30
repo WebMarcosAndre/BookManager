@@ -1,0 +1,42 @@
+
+<input (click)="onClick()" [(ngModel)]="btnValueIncluirNovo" class="btn btn-sm"  
+[ngClass]="showAddBook?'btn-danger':'btn-primary'"
+/>
+
+<form (ngSubmit)="onSubmit()" class="add-form" *ngIf="showAddBook">
+    <div class="mb-4">
+        <label for="text">Titulo:</label>
+        <input type="text" name="text"
+        class="form-control"
+        placeholder="Titulo"
+        id="text"
+        [(ngModel)]="title">
+    </div>
+    <div class="mb-4">
+        <label for="text">Editora:</label>
+        <input type="text" name="text"
+        class="form-control"
+        placeholder="Editora"
+        id="publisherBook"
+        [(ngModel)]="publisherBook">
+    </div>
+    <div class="mb-4">
+        <label for="text">Edição:</label>
+        <input type="text" name="text"
+        class="form-control"
+        placeholder="Edição"
+        id="edition"
+        [(ngModel)]="edition">
+    </div>
+    <div class="mb-4">
+        <label for="text">Ano de publicação:</label>
+        <input type="text" name="text"
+        class="form-control"
+        placeholder="Ano de publicação"
+        id="yearPublication"
+        [(ngModel)]="yearPublication">
+    </div>
+
+    <input type="submit" value="Salvar Livro" class="btn btn-primary mb-4">   
+    
+ 

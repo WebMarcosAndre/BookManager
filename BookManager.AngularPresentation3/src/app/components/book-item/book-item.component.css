@@ -1,0 +1,15 @@
+.book{
+    background: #F4F4F4;
+    margin:5px;
+    /* cursor:pointer; */
+    padding:10px 20px;
+}
+.book.reminder{
+    border-left: 5px solid green;
+}
+
+.book h3{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
