@@ -5,6 +5,26 @@ using BookManager.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var MyAllowSpecificOrigins = "MyAllowSpecificOrigins";
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//            policy =>
+//            {
+//                policy.WithOrigins("http://localhost:4200/");
+//            });
+//});
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin();
+        builder.AllowAnyMethod();
+        builder.AllowAnyHeader();
+    });
+});
+
 builder.Services.AddControllers();
 
 builder.Services.ConfigurePersistence(builder.Configuration);
@@ -45,6 +65,12 @@ app.Use(async (context, next) =>
 });
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseCors();
 
 app.UseAuthorization();
 

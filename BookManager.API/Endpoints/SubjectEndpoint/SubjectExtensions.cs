@@ -80,7 +80,7 @@ namespace BookManager.API.Endpoints.SubjectEndpoint
             .WithTags("Subject")
             .WithOpenApi();
 
-            app.MapGet("/subject/{description}", async (string description, IMediator mediator) =>
+            app.MapGet("/subject/", async (string? description, IMediator mediator) =>
             {
                 var response = await mediator.Send(new GetByFilterQuery(description));
                 return Results.Ok(response);
