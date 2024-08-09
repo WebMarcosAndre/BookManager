@@ -52,7 +52,7 @@ namespace BookManager.Infrastructure.Persistence.Repository.Query
         public async Task<IEnumerable<Book>> Get(Book book)
         {
 
-            var query = $"{mainQuery}  WHERE 1 = 1 ";
+            var query = $"{mainQuery}  WHERE 1 = 1 ORDER BY Titulo";
 
             if (!string.IsNullOrWhiteSpace(book.Title))
             {

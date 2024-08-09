@@ -19,7 +19,7 @@ namespace BookManager.Infrastructure.Persistence.Repository.Query
 
         public async Task<IEnumerable<Author>> Get(string name)
         {
-            return await _conn.QueryAsync<Author>("SELECT CodAu Id, Nome Name FROM Autor (NOLOCK) WHERE Nome LIKE @Nome",
+            return await _conn.QueryAsync<Author>("SELECT CodAu Id, Nome Name FROM Autor (NOLOCK) WHERE Nome LIKE @Nome ORDER BY Nome",
                 new
                 {
                     Nome = $"%{name}%"

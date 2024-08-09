@@ -19,7 +19,7 @@ namespace BookManager.Infrastructure.Persistence.Repository.Query
 
         public async Task<IEnumerable<Subject>> Get(string description)
         {
-            return await _conn.QueryAsync<Subject>("SELECT CodAs Id, Descricao Description FROM Assunto (NOLOCK) WHERE Descricao LIKE @Descricao",
+            return await _conn.QueryAsync<Subject>("SELECT CodAs Id, Descricao Description FROM Assunto (NOLOCK) WHERE Descricao LIKE @Descricao ORDER BY Descricao",
                 new
                 {
                     Descricao = $"%{description}%"
