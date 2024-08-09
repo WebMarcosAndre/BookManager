@@ -16,5 +16,5 @@ Botão com a funcionalidade de apresentar ou esconder o formulário
  obs.os valores de assunto e autores estão mockados, apesar da API já responder com esses dados
  ![image](https://github.com/user-attachments/assets/c83c10e5-6004-4824-b725-8a37fa542333)
 
-O botão de excluir funciona corretamente, o de alterar ainda é necessário mais desenvolvimento
+
 ![image](https://github.com/user-attachments/assets/dc2deeb7-e1c7-45ca-815d-2cde3a817f4e)
