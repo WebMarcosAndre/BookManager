@@ -50,7 +50,7 @@ namespace BookManager.API.Endpoints.BookEndpoint
            .WithTags("Book")
            .WithOpenApi();
 
-            app.MapPut("/book", async (int Id, BookRequest request, IMediator mediator) =>
+            app.MapPut("/book/{id}", async (int Id, BookRequest request, IMediator mediator) =>
             {
                 var command = new UpdateCommand(Id,
                                 request.Title,

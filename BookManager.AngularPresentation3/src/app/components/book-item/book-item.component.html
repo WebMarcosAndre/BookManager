@@ -8,8 +8,8 @@
         <div class="col-3"><b>Edição:</b> {{book.edition}}</div>
         <div class="col-4"><b>Ano de publicação:</b> {{book.yearPublication}}</div>
         <div class="col-2">           
-            <button class="btn btn-warning btn-sm " aria-label="Alterar" (click)="onChange(book)">Alterar</button>       
-            <button class="btn btn-danger btn-sm  " aria-label="Excluir" (click)="onDelete(book)">Excluir</button>       
+            <button class="btn btn-warning btn-sm " aria-label="Alterar" (click)="onSelectToChangeBook(book)">Alterar</button>       
+            <button class="btn btn-danger btn-sm  " aria-label="Excluir" (click)="onDeleteBook(book)">Excluir</button>       
         </div>
     </div>
     <div class="book row justify-content-left" >

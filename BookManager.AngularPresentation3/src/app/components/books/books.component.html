@@ -1,5 +1,6 @@
-<app-add-book (onAddBook)="addBook($event)"></app-add-book>
+<app-add-book (addBook)="onAddBook($event)" (updateBook)="onUpdateBook($event)"></app-add-book>
 <app-book-item *ngFor="let book of books" 
 [book] = "book" 
-(onDeleteBook)="deleteBook($event)">
+(deleteBook)="onDeleteBook($event)"
+(selectToChangeBook)="onSelectToChangeBook($event)">
 </app-book-item>

@@ -1,64 +1,86 @@
-import { Component, Output,EventEmitter  } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Book } from '../../../Book';
+import { Component, Output, EventEmitter, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { CommonModule } from '@angular/common';
+import { Book } from '../../model/Book';
 
 @Component({
   selector: 'app-add-book',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule],
   templateUrl: './add-book.component.html',
   styleUrl: './add-book.component.css'
 })
 export class AddBookComponent {
-  @Output() onAddBook= new EventEmitter<Book>();
-  title:string='';  
-  publisherBook:string='';
-  edition:number=0;
-  yearPublication:string='';
-  showAddBook:boolean=false;
-  btnValueIncluirNovo:string='Incluir novo livro';
+  form: FormGroup;
+  book?: Book;
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      title: [''],
+      publisherBook: [''],
+      edition: [''],
+      yearPublication: ['']
+    });
+  }
 
-  onSubmit(){
-    if(!this.title){
-      alert("Preencha o título")
-      return;
-    }
-    if(!this.publisherBook){
-      alert("Preencha o editora")
-      return;
-    }
-    if(!this.edition){
-      alert("Preencha a edição")
-      return;
-    }
-    if(!this.yearPublication){
-      alert("Preencha o ano de publicação")
-      return;
-    }
+  @Output() addBook = new EventEmitter<Book>();
+  @Output() updateBook = new EventEmitter<Book>();
 
-    const newBook = {
-      title : this.title,
-      publisherBook:this.publisherBook,
-      edition:this.edition,
-      yearPublication:this.yearPublication
+  showAddBook: boolean = false;
+  btnValueIncluirNovo: string = 'Incluir novo livro';
+
+  LoadingForm(book: Book) {
+    this.showAddBook = false;
+    this.toggleForm();
+    this.form.patchValue(book);
+    this.book = book;
+  }
+
+  onSubmit() {
+
+    // if (!this.form.value.title) {
+    //   alert("Preencha o título")
+    //   return;
+    // }
+    // if (!this.form.value.publisherBook) {
+    //   alert("Preencha o editora")
+    //   return;
+    // }
+    // if (!this.form.value.edition) {
+    //   alert("Preencha a edição")
+    //   return;
+    // }
+    // if (!this.form.value.yearPublication) {
+    //   alert("Preencha o ano de publicação")
+    //   return;
+    // }
+
+    if (this.book?.id) {
+
+      this.book.title = this.form.value.title;
+      this.book.publisherBook = this.form.value.publisherBook;
+      this.book.edition = this.form.value.edition;
+      this.book.yearPublication = this.form.value.yearPublication;
+
+      this.updateBook.emit(this.book);
+    } else {
+      this.addBook.emit(this.form.value);
     }
+    this.toggleForm();
+  }
 
-    this.onAddBook.emit(newBook);
-    this.title = "";
-    this.publisherBook = "";
-    this.edition = 0;
-    this.yearPublication = "";
+  toggleForm() {
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.book = undefined;
+    this.form.reset();
 
-   
-  } 
-  
-  onClick(){
     this.showAddBook = !this.showAddBook;
-    if(this.showAddBook){
-      this.btnValueIncluirNovo='Fechar';
-    }else{
-      this.btnValueIncluirNovo='Incluir novo livro';
+
+    if (this.showAddBook) {
+      this.btnValueIncluirNovo = 'Fechar';
+    } else {
+      this.btnValueIncluirNovo = 'Incluir novo livro';
     }
   }
 }

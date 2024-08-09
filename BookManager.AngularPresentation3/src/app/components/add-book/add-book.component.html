@@ -1,42 +1,29 @@
 
-<input (click)="onClick()" [(ngModel)]="btnValueIncluirNovo" class="btn btn-sm"  
-[ngClass]="showAddBook?'btn-danger':'btn-primary'"
-/>
+<input type="button" (click)="toggleForm()" [(ngModel)]="btnValueIncluirNovo" class="btn btn-sm"
+    [ngClass]="showAddBook?'btn-danger':'btn-primary'" />
 
-<form (ngSubmit)="onSubmit()" class="add-form" *ngIf="showAddBook">
+<form (ngSubmit)="onSubmit()" class="add-form" *ngIf="showAddBook" [formGroup]="form">
     <div class="mb-4">
         <label for="text">Titulo:</label>
-        <input type="text" name="text"
-        class="form-control"
-        placeholder="Titulo"
-        id="text"
-        [(ngModel)]="title">
+        <input type="text" name="text" class="form-control" placeholder="Titulo" id="text"  maxlength="40" formControlName="title" >
     </div>
     <div class="mb-4">
         <label for="text">Editora:</label>
-        <input type="text" name="text"
-        class="form-control"
-        placeholder="Editora"
-        id="publisherBook"
-        [(ngModel)]="publisherBook">
+        <input type="text" name="text" class="form-control" placeholder="Editora" id="publisherBook"
+        formControlName="publisherBook">
     </div>
-    <div class="mb-4">
-        <label for="text">Edição:</label>
-        <input type="text" name="text"
-        class="form-control"
-        placeholder="Edição"
-        id="edition"
-        [(ngModel)]="edition">
-    </div>
-    <div class="mb-4">
-        <label for="text">Ano de publicação:</label>
-        <input type="text" name="text"
-        class="form-control"
-        placeholder="Ano de publicação"
-        id="yearPublication"
-        [(ngModel)]="yearPublication">
+    <div class="row">
+        <div class="mb-4 col-6">
+            <label for="text">Edição:</label>
+            <input type="text" name="text" class="form-control" placeholder="Edição" id="edition" formControlName="edition" maxlength="10">
+        </div>
+
+        <div class="mb-4 col-6">
+            <label for="text">Ano de publicação:</label>
+            <input type="text" name="text" class="form-control" placeholder="Ano de publicação" id="yearPublication" maxlength="4"
+            formControlName="yearPublication">
+        </div>
     </div>
 
-    <input type="submit" value="Salvar Livro" class="btn btn-primary mb-4">   
-    
- 
+    <input type="submit" value="Salvar Livro" class="btn btn-primary mb-4">
+    <input type="button" (click)="toggleForm()" value="Limpar" text="Limpar" class="btn btn-danger mb-4"/>
