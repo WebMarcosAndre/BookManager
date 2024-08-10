@@ -12,8 +12,7 @@ Angular com a tela de cadastro de livros
 Botão com a funcionalidade de apresentar ou esconder o formulário
 ![image](https://github.com/user-attachments/assets/9587d1ea-58b5-4aa7-a1e5-03c9627dcdfa)
 
- Grid com os dados de livros carregados, 
- obs.os valores de assunto e autores estão mockados, apesar da API já responder com esses dados
+ Grid com os dados de livros carregados 
  ![image](https://github.com/user-attachments/assets/c83c10e5-6004-4824-b725-8a37fa542333)
 
 
