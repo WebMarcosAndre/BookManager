@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-6">
+        <mat-form-field class="example-full-width">
+            <mat-label>Autores</mat-label>
+            <input type="text" matInput [formControl]="myControl"  [matAutocomplete]="auto"  >
+
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                @for (option of authorFilteredOptions | async; track option) {
+                <mat-option [value]="option" (click)="onAddAuthor(option)">{{option.name}}</mat-option>
+                }
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="list-group">
+            @for (authorAdded of book?.authors; track authorAdded ){            
+                <a href="#" class="list-group-item list-group-item-action float-left" (click)="onDeleteAuthor(authorAdded)">                    
+                        {{authorAdded.name}}              
+                </a>
+            }
+        </div>
+    </div>
+</div>

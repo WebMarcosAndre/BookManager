@@ -11,6 +11,7 @@ import { Book } from '../model/Book';
 export class BooksService {
 
   private apiUrl = 'http://localhost:5258/book';
+  
   constructor(private http: HttpClient) { }
 
   getBooks() : Observable<BookParent>{
@@ -25,8 +26,7 @@ export class BooksService {
     return this.http.post<Book>(`${this.apiUrl}`, book);
   }
 
-  updateBook(book:Book):Observable<Book>{
-    console.log("update ", book);
+  updateBook(book:Book):Observable<Book>{    
     return this.http.put<Book>(`${this.apiUrl}/${book.id}`, book);
   }
 }

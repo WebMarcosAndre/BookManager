@@ -1,0 +1,35 @@
+<div class="book row">
+    <h3>
+        {{book.title}}
+    </h3>
+    <div class="book row justify-content-center">
+        <div class="col-3"><b>Editora:</b> {{book.publisherBook}}</div>
+        <div class="col-3"><b>Edição:</b> {{book.edition}}</div>
+        <div class="col-4"><b>Ano de publicação:</b> {{book.yearPublication}}</div>
+        <div class="col-2">
+            <button mat-mini-fab aria-label="Editar livro" (click)="onSelectToChangeBook(book)" >
+                <mat-icon>edit</mat-icon>
+            </button>
+            &nbsp;
+            <button mat-mini-fab aria-label="Excluir livro" (click)="onDeleteBook(book)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="book row justify-content-left">
+        <div class="col-6">
+            <b>Autor(es):</b> 
+            <ul class="list-group">
+                @for (authorAdded of book.authors; track authorAdded ){            
+                    <li class="list-group-item">                    
+                            {{authorAdded.name}}              
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-6">
+            <b>Assunto(s):</b> {{book.publisherBook}}
+        </div>
+    </div>
+
+</div>

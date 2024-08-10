@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-import { BooksComponent } from './components/books/books.component';
+import { BooksComponent } from './components/book/books/books.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
