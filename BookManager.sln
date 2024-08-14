@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.Infrastructure"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.Application.Test", "test\BookManager.Application.Test\BookManager.Application.Test.csproj", "{7104103D-F914-4EAB-9DF4-F3F738865013}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.Infrastructure.Test", "BookManager.Infrastructure.Test\BookManager.Infrastructure.Test.csproj", "{A2682CA6-94E9-4B08-8834-43569DE75728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.Infrastructure.Test", "test\BookManager.Infrastructure.Test\BookManager.Infrastructure.Test.csproj", "{A2682CA6-94E9-4B08-8834-43569DE75728}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Domain.Test", "BookManager.Domain.Test\BookManager.Domain.Test.csproj", "{57CC4836-F8A1-4650-B79A-6D2C2A7BDE9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.Domain.Test", "test\BookManager.Domain.Test\BookManager.Domain.Test.csproj", "{57CC4836-F8A1-4650-B79A-6D2C2A7BDE9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.API.Test", "test\BookManager.API.Test\BookManager.API.Test.csproj", "{E405E0B6-9366-4B6B-B98F-5DA0E7785FFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{57CC4836-F8A1-4650-B79A-6D2C2A7BDE9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57CC4836-F8A1-4650-B79A-6D2C2A7BDE9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57CC4836-F8A1-4650-B79A-6D2C2A7BDE9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E405E0B6-9366-4B6B-B98F-5DA0E7785FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E405E0B6-9366-4B6B-B98F-5DA0E7785FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E405E0B6-9366-4B6B-B98F-5DA0E7785FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E405E0B6-9366-4B6B-B98F-5DA0E7785FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{7104103D-F914-4EAB-9DF4-F3F738865013} = {0888FE99-21E1-449E-BB46-846BD776F33E}
 		{A2682CA6-94E9-4B08-8834-43569DE75728} = {0888FE99-21E1-449E-BB46-846BD776F33E}
 		{57CC4836-F8A1-4650-B79A-6D2C2A7BDE9F} = {0888FE99-21E1-449E-BB46-846BD776F33E}
+		{E405E0B6-9366-4B6B-B98F-5DA0E7785FFF} = {0888FE99-21E1-449E-BB46-846BD776F33E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E504B7B2-8F80-4949-98ED-A72BB1228815}

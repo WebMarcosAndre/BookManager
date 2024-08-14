@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookManager.Domain\BookManager.Domain.csproj" />
+    <ProjectReference Include="..\..\BookManager.Domain\BookManager.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
