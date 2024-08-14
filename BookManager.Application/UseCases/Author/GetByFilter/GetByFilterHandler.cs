@@ -1,7 +1,7 @@
 ﻿using BookManager.Domain.Interfaces;
 using MediatR;
 
-namespace BookManager.Application.UseCases.Author.GetByName
+namespace BookManager.Application.UseCases.Author.GetByFilter
 {
     public class GetByFilterHandler(IAuthorQuery authorQuery) : IRequestHandler<GetByFilterQuery, GetByFilterResponse>
     {

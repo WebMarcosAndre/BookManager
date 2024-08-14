@@ -1,7 +1,7 @@
 ﻿using BookManager.Application.UseCases.Author.Create;
 using BookManager.Application.UseCases.Author.Delete;
+using BookManager.Application.UseCases.Author.GetByFilter;
 using BookManager.Application.UseCases.Author.GetById;
-using BookManager.Application.UseCases.Author.GetByName;
 using BookManager.Application.UseCases.Author.Update;
 using MediatR;
 

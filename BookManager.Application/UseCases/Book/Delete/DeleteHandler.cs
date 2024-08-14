@@ -10,6 +10,8 @@ namespace BookManager.Application.UseCases.Book.Delete
         {
             var result = await _authorRepository.DeleteAsync(request.Id);
             return new ResultResponse(result);
+            //gere unit test para este método
+
         }
     }
 }

@@ -14,6 +14,6 @@ public class StringLengthRangeAttribute(string nomeCampo, int minimumLenght, int
 
     public override string FormatErrorMessage(string name)
     {
-        return $"O {NomeCampo} deve ter no mínimo {MinimumLength} e no máximo {MaximumLength} caracteres.";
+        return $"{NomeCampo} deve ter no mínimo {MinimumLength} e no máximo {MaximumLength} caracteres.";
     }
 }

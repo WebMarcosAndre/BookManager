@@ -52,7 +52,7 @@ namespace BookManager.Infrastructure.Persistence.Repository.Query
         public async Task<IEnumerable<Book>> Get(Book book)
         {
 
-            var query = $"{mainQuery}  WHERE 1 = 1 ORDER BY Titulo";
+            var query = $"{mainQuery}  WHERE 1 = 1 ";
 
             if (!string.IsNullOrWhiteSpace(book.Title))
             {
@@ -73,6 +73,8 @@ namespace BookManager.Infrastructure.Persistence.Repository.Query
             {
                 query += "AND AnoPublicacao = @AnoPublicacao ";
             }
+
+            query += " ORDER BY Titulo ";
             var bookDictionary = new Dictionary<int, Book>();
             await _conn.QueryAsync<Book, Author, Subject, Book>(query, (book, author, subject) =>
             {

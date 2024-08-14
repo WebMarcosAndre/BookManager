@@ -1,6 +1,6 @@
 ﻿using BookManager.Application.UseCases.Author.GetById;
 
-namespace BookManager.Application.UseCases.Author.GetByName
+namespace BookManager.Application.UseCases.Author.GetByFilter
 {
     public class GetByFilterResponse(IEnumerable<Domain.Entities.Author> authors)
     {
