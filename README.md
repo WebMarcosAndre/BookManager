@@ -1,4 +1,4 @@
-Antes de qualquer coisa, foi muito interessante unir o uma api com Net8 minimal api, com angular.
+Antes de qualquer coisa, foi muito interessante unir uma api com Net8 minimal api, com angular.
 Um desafio empolgante já que não tive muito contato com angular até agora.
 
 Swagger com os CRUD's funcionando
